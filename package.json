@@ -11,5 +11,8 @@
   ],
   "author": "Rajesh",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }
