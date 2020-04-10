@@ -1,5 +1,5 @@
 {
-  "name": "util-package",
+  "name": "js-util-package",
   "version": "0.0.1",
   "description": "utility package for javascript",
   "main": "index.js",
@@ -10,5 +10,6 @@
     "utility"
   ],
   "author": "Rajesh",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {}
 }
