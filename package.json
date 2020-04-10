@@ -1,15 +1,26 @@
 {
   "name": "js-util-package",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "utility package for javascript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "utility"
+    "promise",
+    "promises",
+    "utilities",
+    "utility",
+    "utiljs"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Rajesh",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rkumar1904/util-package"
+  }
 }
