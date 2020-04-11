@@ -2,9 +2,10 @@
   "name": "js-util-package",
   "version": "0.0.4",
   "description": "utility package for javascript",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "keywords": [
     "promise",
@@ -18,9 +19,14 @@
   },
   "author": "Rajesh",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "moment": "^2.24.0"
+  },
   "repository": {
-    "type": "git",
     "url": "https://github.com/rkumar1904/util-package"
+  },
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }
