@@ -1,15 +1,15 @@
 import moment from 'moment';
 
-export const capitalize = (string) => {
+function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-export const randomColor = () => {
+function randomColor() {
   // return `#${Math.floor(Math.random() * 0xFFFFFF).toString(16)}`;
   return `hsl(${Math.random() * 360}, 100%, 90%)`;
 };
 
-export const randomColorDark = (index = 0) => {
+function randomColorDark(index = 0) {
   // return `#${Math.floor(Math.random() * 0xFFFFFF).toString(16)}`;
   // return "hsl(" + Math.random() * 55 + ", 70%, 70%)";
   const colorList = [
@@ -30,18 +30,18 @@ export const randomColorDark = (index = 0) => {
   return colorList[index];
 };
 
-export const delay = (timeout) => {
+function delay(timeout) {
   return new Promise((resolve) => {
     setTimeout(resolve, timeout);
   });
 };
 
-export const getDateReadable = (date) => {
+function getDateReadable(date) {
   // for displaying date as -> 30 Nov 2018
   return moment(date).format('DD MMM YYYY');
 };
 
-export const getFormattedDate = (date) => {
+function getFormattedDate(date) {
   // for displaying date as -> 30 Nov 18, 01:30 AM
   const today = moment();
   const yesterday = moment().subtract(1, 'day');
@@ -54,7 +54,7 @@ export const getFormattedDate = (date) => {
   }
 };
 
-export const getFilterDate = (date) => {
+function getFilterDate(date) {
   // for displaying date as YESTERDAY or TODAY's text
   const today = moment();
   const yesterday = moment().subtract(1, 'day');
@@ -67,7 +67,7 @@ export const getFilterDate = (date) => {
   }
 };
 
-export const stdFormattedDate = (date) => {
+function stdFormattedDate(date) {
   // for displaying date as 22 December 2019, 00:00 or Tomorrow, 00:00
   const today = moment();
   const yesterday = moment().subtract(1, 'day');
@@ -83,7 +83,7 @@ export const stdFormattedDate = (date) => {
   }
 };
 
-export const commonFormattedDate = (date) => {
+function commonFormattedDate(date) {
   // for displaying date as 22 December 2019, 00:00 or Tomorrow, 00:00
   const today = moment();
   const yesterday = moment().subtract(1, 'day');
@@ -99,7 +99,7 @@ export const commonFormattedDate = (date) => {
   }
 };
 
-export const getReadableFormatDate = (date) => {
+function getReadableFormatDate(date) {
   // for displaying date as -> Fri, 20 February or Tomorrow, 00:00
   const today = moment();
   const yesterday = moment().subtract(1, 'day');
@@ -115,12 +115,12 @@ export const getReadableFormatDate = (date) => {
   }
 };
 
-export function fixedZero(val) {
+function fixedZero(val) {
   return val * 1 < 10 ? `0${val}` : val;
 }
 
 
-export function getTimeDistance(type) {
+function getTimeDistance(type) {
   const now = new Date();
   const oneDay = 1000 * 60 * 60 * 24;
 
@@ -164,19 +164,16 @@ export function getTimeDistance(type) {
     return [moment(`${year}-01-01 00:00:00`), moment(`${year}-12-31 23:59:59`)];
   }
 }
-
-
 const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/g;
 
-export function isUrl(path) {
+function isUrl(path) {
   return reg.test(path);
 }
 
-export function kFormatter(num) {
+function kFormatter(num) {
   return Math.abs(num) > 999 ? `${Math.sign(num) * ((Math.abs(num) / 1000).toFixed(1))}k` : Math.sign(num) * Math.abs(num);
 }
-
-export function nFormatter(num, digits) {
+function nFormatter(num, digits) {
   var si = [
     { value: 1, symbol: "" },
     { value: 1E3, symbol: "k" },
@@ -195,23 +192,19 @@ export function nFormatter(num, digits) {
   }
   return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
 }
-
-
-export function numberWithCommas(x) {
+function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
-
-
-export function isEmpty(obj) {
+function isEmpty(obj) {
   for (const prop in obj) {
     if (obj.hasOwnProperty(prop)) return false;
   }
   return true;
 }
-
-
-export function slowImport(value, ms = 1000) {
+function slowImport(value, ms = 1000) {
   return new Promise((resolve) => {
     setTimeout(() => resolve(value), ms);
   });
 }
+
+export { capitalize, slowImport, isEmpty, numberWithCommas, nFormatter, kFormatter, isUrl, getTimeDistance, fixedZero, getReadableFormatDate, commonFormattedDate, stdFormattedDate, getFilterDate, delay, randomColorDark, randomColor, getDateReadable, getFormattedDate};

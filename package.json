@@ -1,15 +1,13 @@
 {
   "name": "js-util-package",
-  "version": "0.0.5",
+  "version": "0.0.14",
   "description": "utility package for javascript",
-  "main": "dist/index.js",
+  "main": "/dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack --mode production"
   },
   "keywords": [
-    "promise",
-    "promises",
     "utilities",
     "utility",
     "utiljs"
@@ -27,6 +25,8 @@
   },
   "devDependencies": {
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "@babel/core": "^7.2.2",
+    "babel-loader": "^8.0.5"
   }
 }
